@@ -262,7 +262,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
-  devise
+  devise (~> 4.9)
   importmap-rails
   jbuilder
   puma (>= 5.0)
