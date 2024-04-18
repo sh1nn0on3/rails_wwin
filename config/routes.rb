@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  devise_for :users
+  devise_for :admin , controllers: {
+    sessions: 'admin/sessions'
+  }
+
+  devise_for :users , controller: {
+    sessions: 'users/sessions'
+  }
   get 'pages/home'
   get 'pages/users'
   get 'pages/admin'
@@ -11,5 +16,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "pages#home"
 end

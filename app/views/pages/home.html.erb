@@ -1,2 +1,26 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<h3> IF you saw the old way </h3>
+<% if current_user %>
+    <p>Logged in as <%= current_user.email %></p>
+    <%= link_to "Sign out" , destroy_user_session_path , method: :delete , data: {turbo_method: :delete} %>
+    <%= link_to "Edit Registeration" , edit_user_registration_path %>
+<% else %>
+    <%= link_to "Sign up" , new_user_registration_path %>
+    <%= link_to "Sign in" , new_user_session_path %>
+
+    <p>Not logged in</p>
+<% end %>
+
+<h3> What you might have been lately </h3>
+<% if current_user %>
+    <p>Logged in as <%= current_user.email %></p>
+    <%= link_to "Sign out" , destroy_user_session_path , method: :delete , data: {turbo_method: :delete} %>
+    <%= link_to "Edit Registeration" , edit_user_registration_path %>
+<% else %>
+    <%= link_to "Sign up" , new_user_registration_path %>
+    <%= link_to "Sign in" , new_user_session_path %>
+
+    <p>Not logged in</p>
+<% end %>
