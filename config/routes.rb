@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  devise_for :users
   get 'pages/home'
   get 'pages/users'
   get 'pages/admin'
